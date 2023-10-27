@@ -9,7 +9,7 @@ public class CreatureCreator : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "DesktopPlatform", "RuntimeSkeletalMeshGenerator" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "RuntimeSkeletalMeshGenerator" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
@@ -20,7 +20,7 @@ public class CreatureCreator : ModuleRules
 		// PrivateDependencyModuleNames.Add("OnlineSubsystem");
 
 		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
-		
+		/* //ASSIMP LOADER 
 		if (Target.Platform == UnrealTargetPlatform.Win64)
 		{
 			string PathToProject = "C:\\dev\\projects\\monsterGame\\CreatureCreator";
@@ -30,6 +30,6 @@ public class CreatureCreator : ModuleRules
 
 			PublicAdditionalLibraries.Add(Path.Combine(LibrariesPath, "assimp-vc142-mt.lib"));
 		}
-		
+		*/
 	}
 }

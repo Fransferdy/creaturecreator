@@ -3,12 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include <assimp/Importer.hpp>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
 #include "Components/ActorComponent.h"
-#include "DesktopPlatform/Public/IDesktopPlatform.h"
-#include "DesktopPlatform/Public/DesktopPlatformModule.h"
 #include "RuntimeSkeletalMeshGenerator/RuntimeSkeletalMeshGenerator.h"
 #include "SkeletalMeshLoader.generated.h"
 
@@ -26,9 +21,9 @@ public:
 	USkeletalMesh* OpenFile(USkeleton* BaseSkeleton, TArray<UMaterialInterface*> mats);
 
 	UFUNCTION(BlueprintCallable, Category = "Assimp")
-	USkeletalMesh* GenerateBlob(USkeleton* BaseSkeleton, TArray<UMaterialInterface*> mats);
+	USkeletalMesh* GenerateBlob(TArray<UMaterialInterface*> mats);
 	
-	 
+	
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -37,5 +32,8 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+private:
+	TArray<FMeshSurface> meshSurfaces;
+	void GenerateMyBlob();
 		
 };
